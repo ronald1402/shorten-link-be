@@ -1,4 +1,4 @@
-# shorten-link-be
+# Shorten Link Backend
 
 To run this app, you can run:
 
