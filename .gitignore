@@ -1,2 +1,6 @@
 #Ignore generated file by container
 /docker
+
+__pycache__/
+
+manage.py
