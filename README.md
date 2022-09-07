@@ -1,5 +1,5 @@
 # Shorten Link Backend
 
-To run this app, you can run:
+To run this api, you can run:
 
 ### `docker-compose up`
