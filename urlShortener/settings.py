@@ -87,11 +87,11 @@ WSGI_APPLICATION = "urlShortener.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'), 
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'), 
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME') or "shorten_url",
+        'USER': os.environ.get('DB_USER') or "django_admin", 
+        'PASSWORD': os.environ.get('DB_PASSWORD') or "Halomoan18",
+        'HOST': os.environ.get('DB_HOST') or "localhost", 
+        'PORT': os.environ.get('DB_PORT') or "5432",
     }
 }
 
