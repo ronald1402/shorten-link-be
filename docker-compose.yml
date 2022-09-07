@@ -1,0 +1,30 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./docker/data/db:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=shorten_url
+      - POSTGRES_USER=django_admin
+      - POSTGRES_PASSWORD=Halomoan18
+  web:
+    build: .
+    command: >
+      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_NAME=shorten_url
+      - DB_USER=django_admin
+      - DB_PASSWORD=Halomoan18
+      - DB_HOST=db
+      - DB_PORT=5432
+    depends_on: 
+      - db
